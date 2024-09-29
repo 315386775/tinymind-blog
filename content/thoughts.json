@@ -1,5 +1,10 @@
 [
   {
+    "id": "1727594279257",
+    "content": "# Hfmirror国内镜像下载大模型的数据及代码\n\ndownload_data.sh\n```sh\n#pip install -U huggingface_hub\nexport HF_ENDPOINT=https://hf-mirror.com\n\ndata_online_path=\"ystemsrx/Erotic_Literature_Collection\"\nlocal_path=\"ystemsrx/Erotic_Literature_Collection\"\n\nhuggingface-cli download \\\n--token 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 \\\n--repo-type dataset \\\n--resume-download $data_online_path  \\\n--local-dir $local_path \\\n--local-dir-use-symlinks False\n```\n\ndownload_model.sh\n```sh\nexport HF_ENDPOINT=https://hf-mirror.com\n\nmodel_online_path=\"BAAI/Bunny-v1_0-4B-gguf\"\nlocal_path=\"BAAI/Bunny-v1_0-4B-gguf\"\n\nhuggingface-cli download \\\n--token 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 \\\n--resume-download $model_online_path  \\\n--local-dir $local_path \\\n--local-dir-use-symlinks False \\\n--exclude *.onnx *.ot *.h5 *.msgpack ggml-model-f16.gguf\n# --max-workers 32 \n```",
+    "timestamp": "2024-09-29T07:17:59.257Z"
+  },
+  {
     "id": "1727055380678",
     "content": "# 时序二分类模型示例\n```\nclass LSTMModel(nn.Module):\n    def __init__(self, input_size, hidden_size, output_size, num_layers=1):\n        super(LSTMModel, self).__init__()\n        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)\n        self.fc = nn.Linear(hidden_size, output_size)\n\n    def forward(self, x):\n        out, (hn, cn) = self.lstm(x)\n        out = self.fc(hn[-1])\n        return torch.sigmoid(out)\n```",
     "timestamp": "2024-09-23T01:36:20.678Z"
