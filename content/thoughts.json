@@ -1,5 +1,10 @@
 [
   {
+    "id": "1748929349636",
+    "content": "关于docker pull 超时的问题，我的有效的解决方案：\n```bash\nsudo vi /etc/docker/daemon.json\n```\n\n配置如下：\n\n```json\n{\n    \"runtimes\": {\n        \"nvidia\": {\n            \"path\": \"nvidia-container-runtime\",\n            \"runtimeArgs\": []\n        }\n    },\n    \"data-root\": \"/mnt/docker\",\n    \"registry-mirrors\": [\n                \"https://registry.docker-cn.com\",\n        \"https://mirrors.tuna.tsinghua.edu.cn/\",\n            \"https://docker.registry.cyou\",\n        \"https://docker-cf.registry.cyou\",\n        \"https://dockercf.jsdelivr.fyi\",\n        \"https://docker.jsdelivr.fyi\",\n        \"https://dockertest.jsdelivr.fyi\",\n        \"https://mirror.aliyuncs.com\",\n        \"https://dockerproxy.com\",\n        \"https://mirror.baidubce.com\",\n        \"https://docker.m.daocloud.io\",\n        \"https://docker.nju.edu.cn\",\n        \"https://docker.mirrors.sjtug.sjtu.edu.cn\",\n        \"https://docker.mirrors.ustc.edu.cn\",\n        \"https://mirror.iscas.ac.cn\",\n        \"https://docker.rainbond.cc\"\n    ]\n}\n```",
+    "timestamp": "2025-06-03T05:42:29.636Z"
+  },
+  {
     "id": "1729748081007",
     "content": "github双重身份认证：浏览器插件，身份验证器 https://chromewebstore.google.com/detail/%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E5%99%A8/bhghoamapcdpbohphigoooaddinpkbai",
     "timestamp": "2024-10-24T05:34:41.007Z"
